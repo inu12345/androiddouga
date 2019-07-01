@@ -1,0 +1,35 @@
+package com.test.douga;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void douga1 (View v){
+
+        Intent intent = new Intent(this, Main2Activity.class);
+        intent.putExtra("mp4", R.raw.v1);
+        startActivity(intent);
+    }
+
+    public void douga2 (View v){
+        Intent intent = new Intent(this, Main2Activity.class);
+        intent.putExtra("mp4", R.raw.v2);
+        startActivity(intent);
+    }
+
+    public void douga3 (View v){
+        Intent intent = new Intent(this, Main2Activity.class);
+        intent.putExtra("mp4", R.raw.v3);
+        startActivity(intent);
+    }
+
+}
