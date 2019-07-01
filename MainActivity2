@@ -1,0 +1,34 @@
+package com.test.douga;
+
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.MediaController;
+import android.widget.VideoView;
+
+public class Main2Activity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+
+        Intent intent = getIntent();
+        int mp4 = intent.getIntExtra("mp4", R.raw.v1);
+
+        VideoView v = (VideoView) findViewById(R.id.v);
+
+        v.setVideoURI(Uri.parse("android.resource://" + this.getPackageName() + "/" + mp4));
+
+        v.start();
+
+        v.setMediaController(new MediaController(this));
+    }
+
+    public void idou1 (View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+}
